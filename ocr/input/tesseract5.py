@@ -1,4 +1,4 @@
-def to_text(path, language="eng"):
+def to_text(path, language="eng+mar"):
     """Wraps Tesseract 4 OCR with custom language model.
 
         Parameters

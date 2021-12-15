@@ -4,5 +4,5 @@ keywords:
   - Registration Certificate
   - Under Rule 13 of the Punjab Shops and Establishment Act
 fields:
-  name_of_establishment: Name of Establishment\s*:*\s*([\S ]+[\S]+)
+  name_of_establishment: Name of the Establishment\s*:*\s*[\S ]+\s*[\S ]+\s*([\S ]+[\S]+)
   name_of_employer: Name and Parentage of Employer\s*:*\s*([\S ]+[\S]+)

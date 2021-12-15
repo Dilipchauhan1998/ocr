@@ -39,23 +39,28 @@ def uploadDocForOcr():
         fileType = filename.rsplit('.', 1)[1].lower()
 
         if fileType == 'pdf':
-            inputModule = 'pdftotext'
+            print("using gvision2 tool for pdf")
+            inputModule = 'gvision2'
         if fileType == 'jpeg' or fileType == 'jpg' or fileType == 'png':
-            inputModule = 'tesseract4'
+            print("using gvision2 tool for image")
+            inputModule = 'gvision2'
 
         result = extract_data('documents/' + filename, templates=templates, input_module=input_mapping[inputModule])
         if result:
             return result
         else:
-            if fileType == 'pdf':
-                inputModule = 'tesseract5'
-                result = extract_data('documents/' + filename, templates=templates,
-                                  input_module=input_mapping[inputModule])
-                if result:
-                    return result
-                return ""
-            else:
-                return ""
+            return ""
+        # else:
+        #     if fileType == 'pdf':
+        #         inputModule = 'tesseract5'
+        #         result = extract_data('documents/' + filename, templates=templates,
+        #                           input_module=input_mapping[inputModule])
+        #         if result:
+        #             return result
+        #         return ""
+        #     else:
+        #         return ""
+
     else:
         resp = jsonify({'message': 'Allowed file types are pdf, png, jpg, jpeg'})
         resp.status_code = 400

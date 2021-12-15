@@ -12,6 +12,7 @@ from .input import pdfminer_wrapper
 from .input import tesseract
 from .input import tesseract4
 from .input import gvision
+from .input import gvision2
 
 from .extract.loader import read_templates
 
@@ -28,7 +29,8 @@ input_mapping = {
     "tesseract4": tesseract4,
     "pdfminer": pdfminer_wrapper,
     "gvision": gvision,
-    "tesseract5": tesseract5
+    "tesseract5": tesseract5,
+    "gvision2": gvision2
 }
 
 output_mapping = {"csv": to_csv, "json": to_json, "xml": to_xml, "none": None}
